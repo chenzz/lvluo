@@ -63,7 +63,12 @@ public abstract class AbstractConsumerTask implements Runnable {
                     rateLimiter.acquire();
                 }
 
-                int retCode = doService(username, requestMap);
+                int retCode = 500;
+                try {
+                    retCode = doService(username, requestMap);
+                } catch (Exception e) {
+                    retCode = 500;
+                }
 
                 //统计返回码
                 totalCount.incrementAndGet();
