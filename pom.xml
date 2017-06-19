@@ -13,5 +13,18 @@
         <module>lvluo-demo</module>
     </modules>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>repo</id>
+            <name>repo-snapshots</name>
+            <url>http://mvn.hz.netease.com/artifactory/libs-snapshots</url>
+        </snapshotRepository>
+
+        <repository>
+            <id>repo</id>
+            <name>repo-releases</name>
+            <url>http://mvn.hz.netease.com/artifactory/libs-releases</url>
+        </repository>
+    </distributionManagement>
 
 </project>
