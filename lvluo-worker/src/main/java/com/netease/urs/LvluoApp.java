@@ -7,11 +7,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.*;
 
 /**
  * @Author: chenzhongzheng
@@ -44,17 +43,29 @@ public class LvluoApp {
         consumerTask.setRequestMap(requestMap);
         consumerTask.setConfigMap(configMap);
 
+        List<Future> futureList = new ArrayList<Future>();
         for (int i = 0; i < threadCount; i++) {
-            consumerExecutorService.submit(consumerTask);
+            Future future = consumerExecutorService.submit(consumerTask);
+            futureList.add(future);
         }
 
         providerExecutorService.shutdown();
         consumerExecutorService.shutdown();
-        while (!providerExecutorService.isTerminated() || !consumerExecutorService.isTerminated()) {
-            try {
-                Thread.sleep(1000L);
-            } catch (InterruptedException e) {
-                LOGGER.error(e.getMessage(), e);
+
+
+        //当provider任务结束 且 queue 中被消费完时，中断consumer线程
+        while (true) {
+            if (providerExecutorService.isTerminated() && usernameQueue.size() == 0) {
+                for (Future future : futureList) {
+                    future.cancel(true);
+                }
+                break;
+            } else {
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    LOGGER.error(e.getMessage(), e);
+                }
             }
         }
 

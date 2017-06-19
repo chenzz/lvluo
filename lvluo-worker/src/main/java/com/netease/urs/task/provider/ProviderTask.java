@@ -37,6 +37,14 @@ public class ProviderTask implements Runnable  {
                     LOGGER.error(e.getMessage(), e);
                 }
             }
+
+            while (queue.size() != 0) {
+                try {
+                    Thread.sleep(1000L);
+                } catch (InterruptedException e) {
+                    LOGGER.error(e.getMessage(), e);
+                }
+            }
         } catch (IOException e) {
             LOGGER.error(e.getMessage(), e);
             return;
