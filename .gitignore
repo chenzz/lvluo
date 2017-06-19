@@ -1,0 +1,10 @@
+.idea/
+*.iml
+out/
+.classpath
+.project
+.DS_Store
+target/
+logs/
+zookeeper.out
+.settings/
