@@ -17,9 +17,9 @@ import java.util.concurrent.atomic.AtomicLong;
  * @Description:
  */
 @Component
-public class OneConsumerTask extends AbstractConsumerTask {
+public class PushConsumerTask extends AbstractConsumerTask {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(OneConsumerTask.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(PushConsumerTask.class);
     private static final Logger SUCCESS_LOGGER = LoggerFactory.getLogger("successLogger");
     private static final Logger FAIL_LOGGER = LoggerFactory.getLogger("failLogger");
 
@@ -30,17 +30,14 @@ public class OneConsumerTask extends AbstractConsumerTask {
     public int doService(String username, Map<String, String> requestMap) {
 
         //获取请求参数，进行参数校验
-        String indexStr = requestMap.get("index");
-        if (StringUtils.isEmpty(indexStr)) {
-            System.out.println("index 参数为空");
+        String message = requestMap.get("message");
+        if (StringUtils.isEmpty(message)) {
+            System.out.println("message 参数为空");
+            System.exit(-1);
         }
-        int index = Integer.parseInt(indexStr);
 
         //业务逻辑处理
-        System.out.println(username + "的逻辑处理完成了~");
-
-        Random random = new Random();
-        int retCode = random.nextInt(2);
+        int retCode = pushMessage(username, message);
 
         //打印需要的结果到日志
         if (retCode == 0) {
@@ -50,6 +47,13 @@ public class OneConsumerTask extends AbstractConsumerTask {
             FAIL_LOGGER.info(username);
             LOGGER.info(MessageFormat.format("失败：第{0}个逻辑处理完成, 用户名为{1}", failCount.addAndGet(1), username));
         }
+
+        return retCode;
+    }
+
+    private int pushMessage(String username, String message) {
+        Random random = new Random();
+        int retCode = random.nextInt(2);
 
         return retCode;
     }

@@ -12,17 +12,17 @@ public class MainTest {
 
     @Test
     public void testMain() {
-        Main.main(new String[]{"oneConsumerTask", "/Users/chenzhongzheng/URS/job-scripts/lvluo/lvluo-worker/src/test/resources/usernameList.txt", "index=2", "threadCount=2"});
+        Main.main(new String[]{"pushConsumerTask", "/Users/chenzhongzheng/URS/job-scripts/lvluo/lvluo-worker/src/test/resources/usernameList.txt", "message=the_message", "threadCount=2"});
     }
 
     @Test
     public void testThreadCount() {
-        Main.main(new String[]{"oneConsumerTask", "/Users/chenzhongzheng/URS/job-scripts/lvluo/lvluo-worker/src/test/resources/usernameList.txt", "index=2", "threadCount=10"});
+        Main.main(new String[]{"pushConsumerTask", "/Users/chenzhongzheng/URS/job-scripts/lvluo/lvluo-worker/src/test/resources/usernameList.txt", "message=the_message", "threadCount=10"});
     }
 
     @Test
     public void testRateLimit() {
-        Main.main(new String[]{"oneConsumerTask", "/Users/chenzhongzheng/URS/job-scripts/lvluo/lvluo-worker/src/test/resources/usernameList.txt", "index=2", "threadCount=10&qps=3"});
+        Main.main(new String[]{"pushConsumerTask", "/Users/chenzhongzheng/URS/job-scripts/lvluo/lvluo-worker/src/test/resources/usernameList.txt", "message=the_message", "threadCount=10&qps=3"});
 
     }
 }

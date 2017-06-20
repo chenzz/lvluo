@@ -34,13 +34,13 @@ public class DemoConsumerTask extends AbstractConsumerTask {
 
         int index = Integer.parseInt(indexStr);
 
+        System.exit(-1);
+
         try {
             Thread.sleep(10);
         } catch (InterruptedException e) {
             System.out.println(username + "在处理时抛出了中断异常");
         }
-
-        System.out.println(username + "的逻辑处理完成~");
 
         Random random = new Random();
         int retCode = random.nextInt(2);
