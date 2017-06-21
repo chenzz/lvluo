@@ -92,7 +92,7 @@ public abstract class AbstractConsumerTask implements Runnable {
                 LOGGER.info(MessageFormat.format("本次请求返回码{0},用户名为{1}。总共请求{2}次，当前返回码统计结果：{3}", retCode, username, totalCount.get(), JSON.toJSONString(retCodeHashMap)));
             }
         } catch (InterruptedException e) {
-            LOGGER.error(e.getMessage(), e);
+            LOGGER.info("消费任务结束！");
         }
     }
 
