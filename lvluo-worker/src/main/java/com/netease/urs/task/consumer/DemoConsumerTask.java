@@ -34,8 +34,6 @@ public class DemoConsumerTask extends AbstractConsumerTask {
 
         int index = Integer.parseInt(indexStr);
 
-        System.exit(-1);
-
         try {
             Thread.sleep(10);
         } catch (InterruptedException e) {

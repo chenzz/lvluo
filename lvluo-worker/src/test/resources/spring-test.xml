@@ -1,25 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <beans xmlns="http://www.springframework.org/schema/beans"
-	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-	   xmlns:context="http://www.springframework.org/schema/context"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
-	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-	
-	<dubbo:application name="mark-consumer"/>
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!--开发环境-->
-	<dubbo:registry id="reg" protocol="zookeeper" address="zookeeper://10.165.124.17:2181" />
-
-	<!--预发布-->
-	<!--<dubbo:registry id="reg" protocol="zookeeper" address="zookeeper://10.112.97.210:2181" />-->
-
-
-
-	<dubbo:reference id="markService" interface="com.netease.urs.api.MarkService" timeout="5000"/>
-
-	<context:component-scan base-package="com.netease"></context:component-scan>
-	<bean class="com.netease.urs.utils.ApplicationContextProvider"/>
+    <context:component-scan base-package="com.netease"></context:component-scan>
+    <bean class="com.netease.urs.utils.ApplicationContextProvider"/>
 
 </beans>

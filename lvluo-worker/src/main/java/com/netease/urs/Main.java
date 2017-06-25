@@ -39,7 +39,7 @@ public class Main {
 
 
         //业务
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath*:applicationContext*.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath*:**/applicationContext*.xml");
 
         LvluoApp lvluoApp = applicationContext.getBean(LvluoApp.class);
         lvluoApp.doWork(beanName, filePath, requestMap, configMap);

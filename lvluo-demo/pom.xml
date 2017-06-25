@@ -30,9 +30,6 @@
         <finalName>lvluo-demo</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
 
-        <!--参考-->
-        <!--http://blog.csdn.net/shuaiOKshuai/article/details/41120403-->
-        <!--小港老师-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
