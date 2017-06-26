@@ -182,7 +182,11 @@ urstest_czz7
 
 
 
-## 3、代码
+## 3、注意事项
+1. ConsumerTask类放在com.netease路径下
+2. Spring版本用4及以上版本，推荐`4.2.9.RELEASE`
+
+## 4、代码
 
 如果对代码有兴趣欢迎围观吐槽~
 
