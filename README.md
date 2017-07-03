@@ -35,7 +35,7 @@
             <url>http://mvn.hz.netease.com/artifactory/libs-snapshots</url>
         </repository>
 
-		<dependency>
+        <dependency>
             <groupId>com.netease.urs</groupId>
             <artifactId>lvluo-worker</artifactId>
             <version>1.0-SNAPSHOT</version>
@@ -190,6 +190,7 @@ urstest_czz7
 
 如果对代码有兴趣欢迎围观吐槽~
 
+git@github.com:czzshr/lvluo.git
 ssh://git@g.hz.netease.com:22222/hzchenzz/lvluo.git
 
 
@@ -197,5 +198,4 @@ ssh://git@g.hz.netease.com:22222/hzchenzz/lvluo.git
 工程中包含了两个module：
 
 lvluo-demo 是lvluo的使用demo
-
 lvluo-worker 是lvluo的具体实现
