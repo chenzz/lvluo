@@ -190,7 +190,6 @@ urstest_czz7
 
 如果对代码有兴趣欢迎围观吐槽~
 
-git@github.com:czzshr/lvluo.git
 ssh://git@g.hz.netease.com:22222/hzchenzz/lvluo.git
 
 
