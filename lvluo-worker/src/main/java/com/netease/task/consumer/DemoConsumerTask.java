@@ -1,4 +1,4 @@
-package com.netease.urs.task.consumer;
+package com.netease.task.consumer;
 
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;

@@ -1,4 +1,4 @@
-package com.netease.urs.utils;
+package com.netease.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;

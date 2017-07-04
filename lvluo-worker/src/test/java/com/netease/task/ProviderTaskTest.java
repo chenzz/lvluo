@@ -1,6 +1,6 @@
 package com.netease.task;
 
-import com.netease.urs.task.provider.ProviderTask;
+import com.netease.task.provider.ProviderTask;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

@@ -1,6 +1,5 @@
 package com.netease;
 
-import com.netease.urs.Main;
 import org.junit.Test;
 
 /**

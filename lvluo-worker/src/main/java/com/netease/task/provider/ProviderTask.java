@@ -1,4 +1,4 @@
-package com.netease.urs.task.provider;
+package com.netease.task.provider;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

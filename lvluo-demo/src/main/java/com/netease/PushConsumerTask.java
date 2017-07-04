@@ -1,6 +1,6 @@
-package com.netease.urs;
+package com.netease;
 
-import com.netease.urs.task.consumer.AbstractConsumerTask;
+import com.netease.task.consumer.AbstractConsumerTask;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

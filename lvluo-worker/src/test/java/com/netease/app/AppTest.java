@@ -1,6 +1,6 @@
 package com.netease.app;
 
-import com.netease.urs.LvluoApp;
+import com.netease.LvluoApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

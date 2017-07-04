@@ -7,7 +7,7 @@
 		   http://code.alibabatech.com/schema/dubbo  http://code.alibabatech.com/schema/dubbo/dubbo.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="com.netease"></context:component-scan>
-    <bean class="com.netease.urs.utils.ApplicationContextProvider"/>
+    <bean class="com.netease.utils.ApplicationContextProvider"/>
 
     <!--<import resource="applicationContext*.xml"/>-->
 

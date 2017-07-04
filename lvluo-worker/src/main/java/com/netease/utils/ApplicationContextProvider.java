@@ -1,4 +1,4 @@
-package com.netease.urs.utils;
+package com.netease.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

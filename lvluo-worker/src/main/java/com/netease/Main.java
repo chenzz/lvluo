@@ -1,12 +1,9 @@
-package com.netease.urs;
+package com.netease;
 
-import com.netease.urs.utils.StringUtils;
+import com.netease.utils.StringUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.util.HashMap;
 import java.util.Map;
 
 /**

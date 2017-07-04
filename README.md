@@ -119,7 +119,7 @@ pom.xml中加入以下代码：
                                     <resource>META-INF/spring.handlers</resource>
                                 </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.netease.urs.Main</mainClass>
+                                    <mainClass>com.netease.Main</mainClass>
                                 </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
                                     <resource>META-INF/spring.schemas</resource>

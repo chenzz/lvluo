@@ -1,6 +1,6 @@
 package com.netease.task;
 
-import com.netease.urs.task.consumer.AbstractConsumerTask;
+import com.netease.task.consumer.AbstractConsumerTask;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;

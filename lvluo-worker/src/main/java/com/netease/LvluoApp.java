@@ -1,8 +1,8 @@
-package com.netease.urs;
+package com.netease;
 
-import com.netease.urs.task.consumer.AbstractConsumerTask;
-import com.netease.urs.task.provider.ProviderTask;
-import com.netease.urs.utils.ApplicationContextProvider;
+import com.netease.task.consumer.AbstractConsumerTask;
+import com.netease.task.provider.ProviderTask;
+import com.netease.utils.ApplicationContextProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;

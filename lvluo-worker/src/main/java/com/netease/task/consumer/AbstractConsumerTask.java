@@ -1,4 +1,4 @@
-package com.netease.urs.task.consumer;
+package com.netease.task.consumer;
 
 import com.alibaba.fastjson.JSON;
 import com.google.common.util.concurrent.RateLimiter;
