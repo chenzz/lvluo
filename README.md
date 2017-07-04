@@ -3,7 +3,6 @@
 [TOC]
 
 最近工作中涉及到两个对批量用户进行离线处理的工作：
-
 1. 对若干用户进行打标记。
 2. 对若干用户进行消息推送。
 
@@ -12,7 +11,6 @@
 通过使用该容器，使用者编写处理业务相关的代码，业务无关的部分交给容器来解决。好比 Servlet和Tomcat之间的关系，绿萝作为一个容器来运行业务代码。
 
 ## 1、有什么用
-
 具体来说，绿萝主要为使用者处理以下逻辑：
 
 1. 从文件中读取用户列表进行后续处理
@@ -24,30 +22,26 @@
 
 
 ## 2、怎么用
+绿萝使用起来很简单，需要以下几步：
 
-绿萝使用起来很简单，需要以下几步
+#### 2.1 安装lvluo到本地repo
+在lvluo目录下执行
+```
+mvn clean install -Dmaven.test.skip
+```
 
-#### 2.1、引入依赖
+#### 2.2、引入依赖
+
 ```xml
-        <repository>
-            <id>libs-snapshots</id>
-            <name>Server Name-releases</name>
-            <url>http://mvn.hz.netease.com/artifactory/libs-snapshots</url>
-        </repository>
-
         <dependency>
             <groupId>com.netease.urs</groupId>
             <artifactId>lvluo-worker</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 ```
-#### 2.2、实现接口
-
+#### 2.3、实现接口
 写一个类继承`AbstractConsumerTask`，并添加@Component注解。
-
 （注：该类需要放置在com.netease路径下）
-
-
 
 例如，要对1亿用户进行消息推送，那么编写以下类即可：
 
@@ -88,14 +82,9 @@ public class PushConsumerTask extends AbstractConsumerTask {
     }
 ```
 
-
-
-#### 2.3、打包
-
-pom.xml中加入以下代码：
-
-其中finalName要指定成想要的名字。
-
+#### 2.4、打包
+`pom.xml`中加入以下代码：
+其中`finalName`要指定成想要的名字。
 ```xml
 
     <build>
@@ -133,9 +122,10 @@ pom.xml中加入以下代码：
     </build>
 ```
 
-#### 2.4、运行
-
-`java -jar demo.jar 消费任务 文件路径 业务参数 系统参数`
+#### 2.5、运行
+```shell
+java -jar demo.jar 消费任务 文件路径 业务参数 系统参数
+```
 
 * 消费任务 - 编写的业务类的名称，首字母替换成小写
 * 文件路径 - 用户名文件对应的文件路径
@@ -143,15 +133,14 @@ pom.xml中加入以下代码：
 * 系统参数 - 如threadCount 指定线程数，qps指定限制的频率
 
 如，
+```shell
+java -jar demo.jar pushConsumerTask usernameList.txt message=xx threadCount=10&qps=100
+```
 
-`java -jar demo.jar pushConsumerTask usernameList.txt message=xx threadCount=10&qps=100`
 
 
-
-#### 2.5、输出结果
-
+#### 2.6、输出结果
 控制台输出：
-
 ```text
 10:32:05,096  INFO DemoConsumerTask:51 - 失败：第504个逻辑处理完成, 用户名为urstest_czz994
 10:32:05,096  INFO DemoConsumerTask:48 - 成功：第492个逻辑处理完成, 用户名为urstest_czz995
@@ -160,7 +149,6 @@ pom.xml中加入以下代码：
 ```
 
 logs/success.log:
-
 ```text
 urstest_czz3
 urstest_czz4
@@ -171,7 +159,6 @@ urstest_czz11
 ```
 
 logs/fail.log
-
 ```
 urstest_czz0
 urstest_czz1
@@ -180,21 +167,14 @@ urstest_czz5
 urstest_czz7
 ```
 
-
-
 ## 3、注意事项
 1. ConsumerTask类放在com.netease路径下
 2. Spring版本用4及以上版本，推荐`4.2.9.RELEASE`
 
 ## 4、代码
-
 如果对代码有兴趣欢迎围观吐槽~
-
-ssh://git@g.hz.netease.com:22222/hzchenzz/lvluo.git
-
-
+[https://github.com/czzshr/lvluo](https://github.com/czzshr/lvluo)
 
 工程中包含了两个module：
-
-lvluo-demo 是lvluo的使用demo
-lvluo-worker 是lvluo的具体实现
+- lvluo-demo 是lvluo的使用demo
+- lvluo-worker 是lvluo的具体实现

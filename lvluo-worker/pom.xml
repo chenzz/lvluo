@@ -113,9 +113,6 @@
         <finalName>lvluo-worker</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
 
-        <!--参考-->
-        <!--http://blog.csdn.net/shuaiOKshuai/article/details/41120403-->
-        <!--小港老师-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -126,33 +123,6 @@
                     <target>1.7</target>
                 </configuration>
             </plugin>
-
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-shade-plugin</artifactId>-->
-                <!--<version>1.4</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<phase>package</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>shade</goal>-->
-                        <!--</goals>-->
-                        <!--<configuration>-->
-                            <!--<transformers>-->
-                                <!--<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">-->
-                                    <!--<resource>META-INF/spring.handlers</resource>-->
-                                <!--</transformer>-->
-                                <!--<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">-->
-                                    <!--<mainClMainMain</mainClass>-->
-                                <!--</transformer>-->
-                                <!--<transformer implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">-->
-                                    <!--<resource>META-INF/spring.schemas</resource>-->
-                                <!--</transformer>-->
-                            <!--</transformers>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
         </plugins>
     </build>
 
